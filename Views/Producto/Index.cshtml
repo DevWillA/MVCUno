@@ -1,0 +1,60 @@
+@model IEnumerable<MVCApp.Models.Producto>
+@{
+
+    ViewData["Title"] = "Productos";
+}
+<p>
+    <a asp-action="Create">AgregarProducto</a>
+</p>
+
+<div>
+    <table class="table">
+        <th>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaDeAlta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model)
+                </th>
+            </tr>
+        </th>
+        <tbody>
+            @foreach (Producto producto in @Model)
+
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItel => producto.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItel => producto.Descripcion)</td>
+                    <td>@Html.DisplayFor(modelItel => producto.Precio)</td>
+                    <td>@Html.DisplayFor(modelItel => producto.Activo)</td>
+                    <td>@Html.DisplayFor(modelItel => producto.FechaDeAlta)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id= "@producto.id">Editar</a>
+                        <a asp-action="Delete" asp-route-id= "@producto.id">Borrar</a>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+            }
+        </tbody>
+    </table>
+
+</div>

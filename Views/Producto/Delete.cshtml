@@ -1,0 +1,33 @@
+@model MVCApp.Models.Producto
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+
+<h3> Esta seguro que quiere borrar este producto? </h3>
+<div>
+<p>@ViewBag.ErrorMessage</p>
+
+    <dl class="row">
+        <dt>
+           @Html.DisplayNameFor(model => model.Nombre) 
+        </dt>
+        <dd>
+           @Html.DisplayFor(model => model.Nombre) 
+        </dd>
+                <dt>
+           @Html.DisplayNameFor(model => model.Descripcion) 
+        </dt>
+        <dd>
+           @Html.DisplayFor(model => model.Descripcion) 
+        </dd>
+    </dl>
+
+</div>
+
+
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="id" />
+    <input type="submit" value="Borrar" class="btn btn-primary"/>
+</form>
